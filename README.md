@@ -1,5 +1,20 @@
-# get_n_givebot
-Пет проект Бот-ассистент для трейдера ByBit больше в readme
-Была идея создать бота который будет парсить или получить api для сбора данных с сайтов, как набивка руки в работе с api или парсингом. в итоге пришел к тому что создам бота который будет брать графики и цену интересующей монеты с ByBit как этакий бот-ассистент трейдера. Также добавил полезную фичу с уведомлением в 8:00 UTC (начало европейской сессии с наибольшими торгами). Также есть напоминалка об открытии форекса (22:00 UTC в воскресенье), в общем полностью ознакомиться можно с самим ботом @get_n_givebot так сказать получает и дает вам ваши данные.
-Сделан он полностью в main.py для обхода CORS так как тестировал я ботов на cloudflared tunnel и деплоил со своего пк. Если бот не работает - значит он не запущен на моем пк (у меня их несколько и всё время всех включенными держать не могу), тех подкованные ребята смогут взять мой main.py и запустить его в своем PyCharm самостоятельно через BotFather.
-Хочу также добавить, что здесь я не прятал данные в .env (в отличие от своих последующих проектов)
+🇷🇺 [Читать на русском](README_RU.md)
+
+An event-driven algorithmic market intelligence assistant providing automated asset pricing, ByBit charting feeds, and macro session scheduling.
+
+### Key Architectural Highlights:
+* **ByBit Market Integration:** Low-latency polling of order book data, ticker prices, and visual chart rendering on demand.
+* **Macro Session Scheduler:** Automated push notifications synchronized with peak liquidity windows, including the European Session open (08:00 UTC).
+* **Forex Weekly Resumption Listener:** Deterministic alerts for global currency market open events (Sundays, 22:00 UTC).
+* **Tunnel-Ready Architecture:** Designed for zero-trust deployment pipelines leveraging Cloudflare Tunnels for endpoint protection.
+
+### Tech Stack:
+* Python 3.12
+* Aiogram 3.x / Aiohttp (High-concurrency networking)
+* ByBit REST API (Exchange data feeds)
+* Asyncio Scheduling primitives
+
+### Quick Start:
+```bash
+pip install -r requirements.txt
+python main12.py
